@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<h2>Tabs</h2>
+<p>Click on the buttons inside the tabbed menu:</p>
+
+<div class="tab">
+  <button class="tablinks" onclick="openTailoringReaction(event, 'Halogenation')">Halogenation</button>
+  <button class="tablinks" onclick="openTailoringReaction(event, 'Methylation')">Methylation</button>
+  <button class="tablinks" onclick="openTailoringReaction(event, 'Glycosylation')">Glycosylation</button>
+</div>
+
+<div id="Halogenation" class="tabcontent">
+  <table>
+    <tr>
+      <th>Identifier</th>
+      <th class="family">Family</th>
+      <th class="substrate">Substrates</th> 
+      <th class="confidence">(confidence)</th>
+      <th>Signature Match</th>
+    </tr>
+    <tr>
+        <td>ktzR</td>
+        <td>Flavin-dependent</td>
+        <td class="substrate">
+            <div>Pyrrole</div>
+            <div>Tryptophan</div>
+        </td>
+        <td class="confidence">
+            <div>(0.5)</div>
+            <div>(0.8)</div>
+        </td>
+        <td>
+            <div>7 out of 15 residues</div>
+            <div>8 out of 20 residues</div>
+        </td>
+    </tr>
+    <tr>
+      <td>ktzQ</td>
+      <td>Flavin-dependent</td>
+      <td class="substrate">
+        <div>Pyrrole</div>
+        <div>Tryptophan</div>
+      </td>
+      <td class="confidence">
+            <div>(0.5)</div>
+            <div>(0.8)</div>
+      </td>
+      <td>
+        <div>7 out of 15 residues</div>
+        <div>8 out of 20 residues</div>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<div id="Methylation" class="tabcontent">
+</div>
+
+<div id="Glycosylation" class="tabcontent">
+</div>
+
+<script>
+function openTailoringReaction(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+   
+</body>
+</html> 
